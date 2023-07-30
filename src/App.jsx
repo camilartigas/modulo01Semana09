@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import './App.css'
 import CardAdicionar from './components/cardAdicionar'
+import ListItem from './components/ListItem'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <CardAdicionar adicionarTarefa={adicionarTarefa}/>
-      <div>{listaTarefas.map(tarefa => (<span>{tarefa.textoTarefa}</span>))}</div>
+      <div>{listaTarefas.map(tarefa => (<ListItem key={tarefa.id} textoTarefa={tarefa.textoTarefa} finalizada={tarefa.finalizada} />))}</div>
     </>
   )
 }
